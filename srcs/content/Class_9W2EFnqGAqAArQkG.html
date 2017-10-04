@@ -1,0 +1,4346 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title></title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		<span>
+FundRequest		</span>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+<a href="Package_QHBjxnqGAqAArQlp.html" class="PageParentTitle">CrowdsaleToken : Package</a><span class="PageParentTitle">&nbsp;.&nbsp;</span><a href="Model_0i45TnqGAqAArQ_i.html" class="PageParentTitle">token : Model</a>	</p>
+	<p class="PageTitle">
+Class - UpgradeableToken<a onclick="javascript: showVpLink('FundRequest.vpp://modelelement/9W2EFnqGAqAArQkG', 'UpgradeableToken\nFundRequest.vpp://modelelement/9W2EFnqGAqAArQkG', 'UpgradeableToken', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Properties			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      pragma solidity ^0.4.15;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      import &quot;./ERC20.sol&quot;;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      import './StandardToken.sol';
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      import &quot;./UpgradeAgent.sol&quot;;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      import &quot;../math/SafeMath.sol&quot;;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * A token upgrade mechanism where users can opt-in amount of tokens to 
+      the next smart contract revision.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      *
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * First envisioned by Golem and Lunyr projects.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      contract UpgradeableToken is StandardToken {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      using SafeMath for uint256;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /** Contract / person who can set the upgrade path. This can be the same 
+      as team multisig wallet, as what it is with its default value. */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      address public upgradeMaster;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /** The next contract where the tokens will be migrated. */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      UpgradeAgent public upgradeAgent;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /** How many tokens we have upgraded by now. */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      uint256 public totalUpgraded;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Upgrade states.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      *
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * - NotAllowed: The child contract has not reached a condition where the 
+      upgrade can bgun
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * - WaitingForAgent: Token allows upgrade, but we don't have a new agent 
+      yet
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * - ReadyToUpgrade: The agent is set, but not a single token has been 
+      upgraded yet
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * - Upgrading: Upgrade agent is set and the balance holders can upgrade 
+      their tokens
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      *
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      enum UpgradeState {Unknown, NotAllowed, WaitingForAgent, ReadyToUpgrade, 
+      Upgrading}
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Somebody has upgraded some of his tokens.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      event Upgrade(address indexed _from, address indexed _to, uint256 
+      _value);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * New upgrade agent available.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      event UpgradeAgentSet(address agent);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Do not allow construction without upgrade master set.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function UpgradeableToken(address _upgradeMaster) {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      upgradeMaster = _upgradeMaster;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Allow the token holder to upgrade some of their tokens to a new 
+      contract.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function upgrade(uint256 value) public {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      UpgradeState state = getUpgradeState();
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      if (!(state == UpgradeState.ReadyToUpgrade || state == 
+      UpgradeState.Upgrading)) {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Called in a bad state
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      revert();
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Validate input value.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require (value != 0);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      balances[msg.sender] = balances[msg.sender].sub(value);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Take tokens out from circulation
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      totalSupply = totalSupply.sub(value);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      totalUpgraded = totalUpgraded.add(value);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Upgrade agent reissues the tokens
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      upgradeAgent.upgradeFrom(msg.sender, value);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      Upgrade(msg.sender, upgradeAgent, value);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Set an upgrade agent that handles
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function setUpgradeAgent(address agent) external {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      //the contract should be in a state where we can actually upgrade
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require(canUpgrade());
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      //the address of the agent should not be 0
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require(agent != address(0));
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Only a master can designate the next agent
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require(msg.sender == upgradeMaster);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Upgrade has already begun for an agent
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require(getUpgradeState() != UpgradeState.Upgrading);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      upgradeAgent = UpgradeAgent(agent);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Bad interface
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require(upgradeAgent.isUpgradeAgent());
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // Make sure that token supplies match in source and target
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require (upgradeAgent.originalSupply() == totalSupply);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      UpgradeAgentSet(upgradeAgent);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Get the state of the token upgrade.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function getUpgradeState() public constant returns(UpgradeState) {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      if (!canUpgrade()) {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      return UpgradeState.NotAllowed;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      } else if (address(upgradeAgent) == address(0)) {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      return UpgradeState.WaitingForAgent;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      } else if (totalUpgraded == 0) {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      return UpgradeState.ReadyToUpgrade;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      } else {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      return UpgradeState.Upgrading;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Change the upgrade master.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      *
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * This allows us to set a new owner for the upgrade mechanism.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function setUpgradeMaster(address master) public {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require (master != address(0));
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require(msg.sender == upgradeMaster);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      upgradeMaster = master;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      /**
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      * Child contract can enable to provide the condition when the upgrade 
+      can begun.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      */
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function canUpgrade() public constant returns(bool) {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      return true;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 9, 2017 9:33:13 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 12, 2017 11:52:20 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Active</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Business Key Mutable</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Business Model</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Root</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Attributes Summary			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="10" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="10" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td width="10%">
+<span class="TableHeaderText">Visibility</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td width="15%">
+<span class="TableHeaderText">Type</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td width="15%">
+<span class="TableHeaderText">Initial Value</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="10" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#gPb9TnqGAqAArRR5" class="ItemLink">using SafeMath for uint256</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+private			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#Gk79TnqGAqAArRR9" class="ItemLink">address public upgradeMaster</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+private			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#Ms79TnqGAqAArRSB" class="ItemLink">UpgradeAgent public upgradeAgent</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+private			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#TC79TnqGAqAArRSF" class="ItemLink">uint256 public totalUpgraded</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+private			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#8K79TnqGAqAArRSJ" class="ItemLink">enum UpgradeState {Unknown, NotAllowed, WaitingForAgent, ReadyToUpgrade, Upgrading}</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+private			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Operations Summary			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="8" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="8" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="10%">
+<span class="TableHeaderText">Visibility</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td width="15%">
+<span class="TableHeaderText">Return Type</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="8" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#C9H9TnqGAqAArRSd" class="ItemLink">event Upgrade(address indexed _from, address indexed _to, uint256 _value)</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#hvH9TnqGAqAArRSg" class="ItemLink">event UpgradeAgentSet(address agent)</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#Ign9TnqGAqAArRSj" class="ItemLink">function UpgradeableToken(address _upgradeMaster) </a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#QIn9TnqGAqAArRSm" class="ItemLink">function upgrade(uint256 value) public</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#DYn9TnqGAqAArRSp" class="ItemLink">function setUpgradeAgent(address agent) external</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#Kkn9TnqGAqAArRSs" class="ItemLink">function getUpgradeState() public constant returns(UpgradeState)</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#r0n9TnqGAqAArRSv" class="ItemLink">function setUpgradeMaster(address master) public</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_9W2EFnqGAqAArQkG.html#2cn9TnqGAqAArRSy" class="ItemLink">function canUpgrade() public constant returns(bool)</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Relationships Summary			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="6" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="6" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Begin</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">End</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="6" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Generalization.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Generalization.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9W2EFnqGAqAArQkG.html#q01EFnqGAqAArQpb" class="ItemLink"> : Generalization</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9W2EFnqGAqAArQkG.html" class="ItemLink">UpgradeableToken : Class</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9C54FnqGAqAArQjA.html" class="ItemLink">CrowdsaleToken : Class</a>				</span>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Generalization.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Generalization.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9W2EFnqGAqAArQkG.html#pGa0FnqGAqAArQvX" class="ItemLink"> : Generalization</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_eJ_UFnqGAqAArQuM.html" class="ItemLink">StandardToken : Class</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9W2EFnqGAqAArQkG.html" class="ItemLink">UpgradeableToken : Class</a>				</span>
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Usage.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Usage.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9W2EFnqGAqAArQkG.html#bnLZLnqGAqAArQsA" class="ItemLink">import : Usage</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9C54FnqGAqAArQjA.html" class="ItemLink">CrowdsaleToken : Class</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_9W2EFnqGAqAArQkG.html" class="ItemLink">UpgradeableToken : Class</a>				</span>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Attributes Details			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+<a name="gPb9TnqGAqAArRR5"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">using SafeMath for uint256</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:42 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:02:13 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Allow Empty Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Setter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Getter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">private</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Aggregation</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">None</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived Union</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Read Only</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Is ID</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="Gk79TnqGAqAArRR9"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">address public upgradeMaster</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:42 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:02:42 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Allow Empty Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Setter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Getter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">private</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Aggregation</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">None</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived Union</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Read Only</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Is ID</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="Ms79TnqGAqAArRSB"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">UpgradeAgent public upgradeAgent</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:43 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:02:42 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Allow Empty Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Setter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Getter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">private</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Aggregation</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">None</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived Union</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Read Only</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Is ID</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="TC79TnqGAqAArRSF"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">uint256 public totalUpgraded</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:43 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:02:42 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Allow Empty Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Setter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Getter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">private</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Aggregation</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">None</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived Union</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Read Only</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Is ID</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="8K79TnqGAqAArRSJ"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">enum UpgradeState {Unknown, NotAllowed, WaitingForAgent, ReadyToUpgrade, Upgrading}</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:43 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:03:07 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Type</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Allow Empty Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Setter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Has Getter</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">private</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Multiplicity</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Aggregation</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">None</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Derived Union</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Read Only</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Is ID</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Operations Details			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+<a name="C9H9TnqGAqAArRSd"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">event Upgrade(address indexed _from, address indexed _to, uint256 _value)</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:49 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:03:17 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="hvH9TnqGAqAArRSg"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">event UpgradeAgentSet(address agent)</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:50 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:03:44 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="Ign9TnqGAqAArRSj"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function UpgradeableToken(address _upgradeMaster) </span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:50 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:03:44 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="QIn9TnqGAqAArRSm"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function upgrade(uint256 value) public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:50 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:03:44 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="DYn9TnqGAqAArRSp"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function setUpgradeAgent(address agent) external</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:50 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:03:54 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="Kkn9TnqGAqAArRSs"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function getUpgradeState() public constant returns(UpgradeState)</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:51 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:04:21 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="r0n9TnqGAqAArRSv"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function setUpgradeMaster(address master) public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:51 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:04:21 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="2cn9TnqGAqAArRSy"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function canUpgrade() public constant returns(bool)</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:01:51 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:04:21 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Relationships Detail			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+<a name="q01EFnqGAqAArQpb"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 9, 2017 9:34:18 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 11:11:21 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="pGa0FnqGAqAArQvX"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 9, 2017 9:45:59 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 10:25:16 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="bnLZLnqGAqAArQsA"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">import</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 12, 2017 7:41:28 AM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 12, 2017 7:42:36 AM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Stereotypes</span>			</td>
+			<td>
+			</td>
+			<td class="TableContent">
+				<span class="TableContent">
+<a href="Stereotype_OZ0gJnqGAqAArQng.html" class="ItemLink">use</a>				</span>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<p>
+	</p>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+Appears In			</td>
+		</tr>
+		<tr>
+			<td class="TableCellSpaceHolder5PxTall">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Diagram</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="2" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ClassDiagram.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ClassDiagram.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="ClassDiagram_GXMjxnqGAqAArQlX.html" class="ItemLink">CrowdsaleToken : Class Diagram</a>				</span>
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px;">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+FundRequest	</div>
+</body>
+</html>
