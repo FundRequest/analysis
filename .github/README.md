@@ -4,3 +4,4 @@
 
 Repository containing the analysis documents and overviews of the [FundRequest](https://fundrequest.io) project 
 
+<img align="right" src="https://raw.githubusercontent.com/FundRequest/analysis/master/screen/screen.png" />
