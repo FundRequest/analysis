@@ -1,0 +1,593 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Use Case Diagram - UCD FundRequest core</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		FundRequest	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p>
+<a href="Package_lrMBH3qGAqAArRHV.html" class="PageParentTitle">UCD FundRequestPlatform : Package</a>	</p>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Use Case Diagram - UCD FundRequest core		</span>
+<a onclick="javascript: showVpLink('FundRequest.vpp://diagram/OOWaw7qGAqAArRYh', 'UCD FundRequest core\nFundRequest.vpp://diagram/OOWaw7qGAqAArRYh', 'UCD FundRequest core', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),hideLinkPopup(),hideReferencedBys();">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin('diagram', this.value);hideLinkPopup();showSpotLight('diagram', this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|166.0|850.0|572.0|166.0|System_tFFjOPqGAqAArRqs.html|System_tFFjOPqGAqAArRqs.html|tFFjOPqGAqAArRqr" id="optiontFFjOPqGAqAArRqr">SolutionOracle : System</option>
+<option value="shape|166.0|1027.0|572.0|153.0|System_5GTJo7qGAqAArRhf.html|System_5GTJo7qGAqAArRhf.html|5GTJo7qGAqAArRhe" id="option5GTJo7qGAqAArRhe">RepositoryPlatform (GitHub) : System</option>
+<option value="shape|166.0|2.0|572.0|837.0|System_nJlaw7qGAqAArRZY.html|System_nJlaw7qGAqAArRZY.html|7Jlaw7qGAqAArRZX" id="option7Jlaw7qGAqAArRZX">FundRequestPlatform : System</option>
+<option value="shape|36.0|301.0|30.0|60.0|Actor_VWRaw7qGAqAArRY6.html|Actor_VWRaw7qGAqAArRY6.html|FWRaw7qGAqAArRY5" id="optionFWRaw7qGAqAArRY5">FundRequestUser : Actor</option>
+<option value="shape|36.0|545.0|30.0|60.0|Actor_Z7Jaw7qGAqAArRZE.html|Actor_Z7Jaw7qGAqAArRZE.html|p7Jaw7qGAqAArRZD" id="optionp7Jaw7qGAqAArRZD">Funder : Actor</option>
+<option value="shape|36.0|678.0|30.0|60.0|Actor_Do5aw7qGAqAArRZO.html|Actor_Do5aw7qGAqAArRZO.html|Do5aw7qGAqAArRZN" id="optionDo5aw7qGAqAArRZN">Solver : Actor</option>
+<option value="shape|93.0|903.0|30.0|60.0|Actor_oR9TOPqGAqAArRsR.html|Actor_oR9TOPqGAqAArRsR.html|oR9TOPqGAqAArRsQ" id="optionoR9TOPqGAqAArRsQ">FundRequestPlatform : Actor</option>
+<option value="shape|199.0|545.0|154.0|63.0|UseCase_ySVaw7qGAqAArRZf.html|UseCase_ySVaw7qGAqAArRZf.html|SMpEOPqGAqAArRhg" id="optionSMpEOPqGAqAArRhg">Consult overview of FundRequestIssue's : Use Case</option>
+<option value="shape|199.0|312.0|154.0|63.0|UseCase_ySVaw7qGAqAArRZf.html|UseCase_ySVaw7qGAqAArRZf.html|SSVaw7qGAqAArRZe" id="optionSSVaw7qGAqAArRZe">Consult overview of FundRequestIssue's : Use Case</option>
+<option value="shape|481.0|197.0|154.0|64.0|UseCase_qEraw7qGAqAArRag.html|UseCase_qEraw7qGAqAArRag.html|qEraw7qGAqAArRaf" id="optionqEraw7qGAqAArRaf">Consult FundRequestIssue : Use Case</option>
+<option value="shape|481.0|269.0|154.0|64.0|UseCase_kCG6w7qGAqAArRct.html|UseCase_kCG6w7qGAqAArRct.html|kCG6w7qGAqAArRcr" id="optionkCG6w7qGAqAArRcr">Create an unfunded FundRequestIssue : Use Case</option>
+<option value="shape|481.0|352.0|154.0|64.0|UseCase_SYn6w7qGAqAArRdN.html|UseCase_SYn6w7qGAqAArRdN.html|SYn6w7qGAqAArRdL" id="optionSYn6w7qGAqAArRdL">Update an unfunded FundRequestIssue : Use Case</option>
+<option value="shape|481.0|430.0|154.0|64.0|UseCase_Auv6w7qGAqAArRdl.html|UseCase_Auv6w7qGAqAArRdl.html|Auv6w7qGAqAArRdj" id="optionAuv6w7qGAqAArRdj">Delete an unfunded FundRequestIssue : Use Case</option>
+<option value="shape|477.0|545.0|154.0|63.0|UseCase_HZuGw7qGAqAArRfI.html|UseCase_HZuGw7qGAqAArRfI.html|HZuGw7qGAqAArRfG" id="optionHZuGw7qGAqAArRfG">Funding a FundRequestIssue : Use Case</option>
+<option value="shape|206.0|1037.0|154.0|63.0|UseCase_m5BGw7qGAqAArRfg.html|UseCase_m5BGw7qGAqAArRfg.html|m5BGw7qGAqAArRfe" id="optionm5BGw7qGAqAArRfe">Solve a RepositoryIssue (RepositoryPlatform BPM) : Use Case</option>
+<option value="shape|477.0|674.0|150.0|64.0|UseCase_A5VJo7qGAqAArRhH.html|UseCase_A5VJo7qGAqAArRhH.html|A5VJo7qGAqAArRhG" id="optionA5VJo7qGAqAArRhG">Claim Reward of funded FundRequestIssue solved by the Solver : Use Case</option>
+<option value="shape|199.0|20.0|196.0|64.0|UseCase_UYapo7qGAqAArRjR.html|UseCase_UYapo7qGAqAArRjR.html|UYapo7qGAqAArRjQ" id="optionUYapo7qGAqAArRjQ">Log in to the FundRequestPlatform : Use Case</option>
+<option value="shape|537.0|1115.0|163.0|40.0|UseCase_7tZpo7qGAqAArRj5.html|UseCase_7tZpo7qGAqAArRj5.html|7tZpo7qGAqAArRj4" id="option7tZpo7qGAqAArRj4">Log in to RepositoryPlatform : Use Case</option>
+<option value="shape|481.0|104.0|154.0|64.0|UseCase_Yg_RH3qGAqAArQhZ.html|UseCase_Yg_RH3qGAqAArQhZ.html|og.RH3qGAqAArQhX" id="optionog.RH3qGAqAArQhX">Link RepositoryUserAccount to FundRequestUser : Use Case</option>
+<option value="shape|199.0|113.0|196.0|47.0|UseCase_oX9RH3qGAqAArQiA.html|UseCase_oX9RH3qGAqAArQiA.html|oX9RH3qGAqAArQh_" id="optionoX9RH3qGAqAArQh_">Consult FundRequestUserAccount : Use Case</option>
+<option value="shape|537.0|1048.0|163.0|40.0|UseCase_28wJH3qGAqAArQn2.html|UseCase_28wJH3qGAqAArQn2.html|28wJH3qGAqAArQn0" id="option28wJH3qGAqAArQn0">Get RepositoryUserAccount information : Use Case</option>
+<option value="shape|193.0|675.0|154.0|63.0|UseCase_VALO6PqGAqAArRdv.html|UseCase_VALO6PqGAqAArRdv.html|VALO6PqGAqAArRdt" id="optionVALO6PqGAqAArRdt">Consult an overview FundRequestIssue's solved by the Solver : Use Case</option>
+<option value="shape|206.0|939.0|240.0|40.0|UseCase_L1zjOPqGAqAArRq3.html|UseCase_L1zjOPqGAqAArRq3.html|z1zjOPqGAqAArRq2" id="optionz1zjOPqGAqAArRq2">Retrieve the RepositoryIssue's solved by the Solver : Use Case</option>
+<option value="shape|206.0|879.0|240.0|40.0|UseCase_2PaTOPqGAqAArRrz.html|UseCase_2PaTOPqGAqAArRrz.html|2PaTOPqGAqAArRry" id="option2PaTOPqGAqAArRry">Evaluate if the Solver has solved a RepositoryIssue.FundRequestIssue : Use Case</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/UCD_FundRequest_core.png" usemap="#diagram_map" class="Image" width="840" height="1184"/>
+					<map name="diagram_map">
+<area imageId="diagram" coords="336.0, 219.0, 336.0, 222.0, 333.0, 222.0, 333.0, 236.0, 336.0, 236.0, 336.0, 312.0, 350.0, 312.0, 350.0, 236.0, 481.0, 236.0, 481.0, 222.0, 350.0, 222.0, 350.0, 219.0" coords2="336.0, 219.0, 336.0, 222.0, 333.0, 222.0, 333.0, 236.0, 336.0, 236.0, 336.0, 312.0, 350.0, 312.0, 350.0, 236.0, 481.0, 236.0, 481.0, 222.0, 350.0, 222.0, 350.0, 219.0" shape="poly" alt=":Include" id="areadiagram_map_pAvaw7qGAqAArRbM" href="Include_eAvaw7qGAqAArRbL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="66.0, 337.0, 66.0, 351.0, 199.0, 351.0, 199.0, 337.0" coords2="66.0, 337.0, 66.0, 351.0, 199.0, 351.0, 199.0, 337.0" shape="poly" alt=":Association" id="areadiagram_map_t3i6w7qGAqAArRcY" href="Association_53i6w7qGAqAArRcT.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="336.0, 277.0, 336.0, 280.0, 333.0, 280.0, 333.0, 294.0, 336.0, 294.0, 336.0, 312.0, 350.0, 312.0, 350.0, 294.0, 481.0, 294.0, 481.0, 280.0, 350.0, 280.0, 350.0, 277.0" coords2="336.0, 277.0, 336.0, 280.0, 333.0, 280.0, 333.0, 294.0, 336.0, 294.0, 336.0, 312.0, 350.0, 312.0, 350.0, 294.0, 481.0, 294.0, 481.0, 280.0, 350.0, 280.0, 350.0, 277.0" shape="poly" alt=":Include" id="areadiagram_map_oM76w7qGAqAArRdC" href="Include__076w7qGAqAArRdB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="330.0, 375.0, 330.0, 378.0, 327.0, 378.0, 327.0, 392.0, 330.0, 392.0, 330.0, 395.0, 344.0, 395.0, 344.0, 392.0, 481.0, 392.0, 481.0, 378.0, 344.0, 378.0, 344.0, 375.0" coords2="330.0, 375.0, 330.0, 378.0, 327.0, 378.0, 327.0, 392.0, 330.0, 392.0, 330.0, 395.0, 344.0, 395.0, 344.0, 392.0, 481.0, 392.0, 481.0, 378.0, 344.0, 378.0, 344.0, 375.0" shape="poly" alt=":Include" id="areadiagram_map_ATQGw7qGAqAArRd4" href="Include_3jQGw7qGAqAArRd3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="330.0, 375.0, 330.0, 455.0, 327.0, 455.0, 327.0, 469.0, 330.0, 469.0, 330.0, 472.0, 344.0, 472.0, 344.0, 469.0, 481.0, 469.0, 481.0, 455.0, 344.0, 455.0, 344.0, 375.0" coords2="330.0, 375.0, 330.0, 455.0, 327.0, 455.0, 327.0, 469.0, 330.0, 469.0, 330.0, 472.0, 344.0, 472.0, 344.0, 469.0, 481.0, 469.0, 481.0, 455.0, 344.0, 455.0, 344.0, 375.0" shape="poly" alt=":Include" id="areadiagram_map_i98Gw7qGAqAArRec" href="Include_M98Gw7qGAqAArReb.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="66.0, 569.0, 66.0, 583.0, 199.0, 583.0, 199.0, 569.0" coords2="66.0, 569.0, 66.0, 583.0, 199.0, 583.0, 199.0, 569.0" shape="poly" alt=":Association" id="areadiagram_map_F1.Gw7qGAqAArRfb" href="Association_R1_Gw7qGAqAArRfW.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="44.0, 742.0, 44.0, 1061.0, 41.0, 1061.0, 41.0, 1075.0, 44.0, 1075.0, 44.0, 1078.0, 58.0, 1078.0, 58.0, 1075.0, 206.0, 1075.0, 206.0, 1061.0, 58.0, 1061.0, 58.0, 742.0" coords2="44.0, 742.0, 44.0, 1061.0, 41.0, 1061.0, 41.0, 1075.0, 44.0, 1075.0, 44.0, 1078.0, 58.0, 1078.0, 58.0, 1075.0, 206.0, 1075.0, 206.0, 1061.0, 58.0, 1061.0, 58.0, 742.0" shape="poly" alt=":Association" id="areadiagram_map_0FxGw7qGAqAArRf3" href="Association_EFxGw7qGAqAArRfy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="66.0, 699.0, 66.0, 713.0, 193.0, 713.0, 193.0, 699.0" coords2="66.0, 699.0, 66.0, 713.0, 193.0, 713.0, 193.0, 699.0" shape="poly" alt=":Association" id="areadiagram_map_ydXJo7qGAqAArRiE" href="Association_sdXJo7qGAqAArRh_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="199.0, 69.64706, 56.843372, 301.0, 66.0, 301.0, 66.0, 312.0, 206.09639, 84.0, 199.0, 84.0, 199.0, 69.64706" coords2="199.0, 69.64706, 56.843372, 301.0, 66.0, 301.0, 66.0, 312.0, 206.09639, 84.0, 199.0, 84.0, 199.0, 69.64706" shape="poly" alt=":Association" id="areadiagram_map_yr5RH3qGAqAArQhx" href="Association_cr5RH3qGAqAArQhs.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="199.0, 149.65823, 54.95181, 301.0, 66.0, 301.0, 66.0, 309.89874, 66.0, 309.89874, 208.6747, 160.0, 199.0, 160.0, 199.0, 149.65823" coords2="199.0, 149.65823, 54.95181, 301.0, 66.0, 301.0, 66.0, 309.89874, 66.0, 309.89874, 208.6747, 160.0, 199.0, 160.0, 199.0, 149.65823" shape="poly" alt=":Association" id="areadiagram_map_YDZxH3qGAqAArQm5" href="Association_gDZxH3qGAqAArQm0.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="395.0, 124.0, 395.0, 138.0, 481.0, 138.0, 481.0, 124.0" coords2="395.0, 124.0, 395.0, 138.0, 481.0, 138.0, 481.0, 124.0" shape="poly" alt=":Include" id="areadiagram_map_EOzxH3qGAqAArQnF" href="Include_gOzxH3qGAqAArQnE.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="779.0, 121.0, 779.0251, 124.0, 635.0, 124.0, 635.0, 138.0, 779.1423, 138.0, 786.8577, 1060.0, 700.0, 1060.0, 700.0, 1074.0, 786.9749, 1074.0, 787.0, 1077.0, 801.0, 1077.0, 800.9749, 1074.0, 804.0, 1074.0, 804.0, 1060.0, 800.8577, 1060.0, 793.1423, 138.0, 796.0, 138.0, 796.0, 124.0, 793.0251, 124.0, 793.0, 121.0" coords2="779.0, 121.0, 779.0251, 124.0, 635.0, 124.0, 635.0, 138.0, 779.1423, 138.0, 786.8577, 1060.0, 700.0, 1060.0, 700.0, 1074.0, 786.9749, 1074.0, 787.0, 1077.0, 801.0, 1077.0, 800.9749, 1074.0, 804.0, 1074.0, 804.0, 1060.0, 800.8577, 1060.0, 793.1423, 138.0, 796.0, 138.0, 796.0, 124.0, 793.0251, 124.0, 793.0, 121.0" shape="poly" alt=":Include" id="areadiagram_map_clMJH3qGAqAArQoJ" href="Include_wlMJH3qGAqAArQoI.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="347.0, 703.0, 347.0, 717.0, 477.0, 717.0, 477.0, 703.0" coords2="347.0, 703.0, 347.0, 717.0, 477.0, 717.0, 477.0, 703.0" shape="poly" alt=":Include" id="areadiagram_map_YAUu6PqGAqAArRe8" href="Include_AAUu6PqGAqAArRe7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="29.0, 742.0, 29.0, 1126.0, 26.0, 1126.0, 26.0, 1140.0, 29.0, 1140.0, 29.0, 1143.0, 43.0, 1143.0, 43.0, 1140.0, 537.0, 1140.0, 537.0, 1126.0, 43.0, 1126.0, 43.0, 742.0" coords2="29.0, 742.0, 29.0, 1126.0, 26.0, 1126.0, 26.0, 1140.0, 29.0, 1140.0, 29.0, 1143.0, 43.0, 1143.0, 43.0, 1140.0, 537.0, 1140.0, 537.0, 1126.0, 43.0, 1126.0, 43.0, 742.0" shape="poly" alt=":Association" id="areadiagram_map_C4we6PqGAqAArRgv" href="Association_E4we6PqGAqAArRgq.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="353.0, 569.0, 353.0, 583.0, 477.0, 583.0, 477.0, 569.0" coords2="353.0, 569.0, 353.0, 583.0, 477.0, 583.0, 477.0, 569.0" shape="poly" alt=":Include" id="areadiagram_map_PiXEOPqGAqAArRiC" href="Include_LiXEOPqGAqAArRiB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="113.0, 896.0, 113.0, 903.0, 123.0, 903.0, 123.0, 910.0, 206.0, 910.0, 206.0, 896.0" coords2="113.0, 896.0, 113.0, 903.0, 123.0, 903.0, 123.0, 910.0, 206.0, 910.0, 206.0, 896.0" shape="poly" alt=":Association" id="areadiagram_map_W5vTOPqGAqAArRs_" href="Association_S5vTOPqGAqAArRs6.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="123.0, 952.0, 123.0, 963.0, 113.0, 963.0, 113.0, 966.0, 206.0, 966.0, 206.0, 952.0" coords2="123.0, 952.0, 123.0, 963.0, 113.0, 963.0, 113.0, 966.0, 206.0, 966.0, 206.0, 952.0" shape="poly" alt=":Association" id="areadiagram_map_dm_TOPqGAqAArRtH" href="Association_Fm_TOPqGAqAArRtC.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="93, 903, 123, 963" coords2="93, 903, 123, 963" shape="rect" alt="FundRequestPlatform:Actor" id="areadiagram_map_oR9TOPqGAqAArRsQ" href="Actor_oR9TOPqGAqAArRsR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="206, 879, 446, 919" coords2="206, 879, 446, 919" shape="rect" alt="Evaluate if the Solver has solved a RepositoryIssue.FundRequestIssue:Use Case" id="areadiagram_map_2PaTOPqGAqAArRry" href="UseCase_2PaTOPqGAqAArRrz.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="206, 939, 446, 979" coords2="206, 939, 446, 979" shape="rect" alt="Retrieve the RepositoryIssue's solved by the Solver:Use Case" id="areadiagram_map_z1zjOPqGAqAArRq2" href="UseCase_L1zjOPqGAqAArRq3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="166, 850, 738, 1016" coords2="166, 850, 738, 1016" shape="rect" alt="SolutionOracle:System" id="areadiagram_map_tFFjOPqGAqAArRqr" href="System_tFFjOPqGAqAArRqs.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="199, 545, 353, 608" coords2="199, 545, 353, 608" shape="rect" alt="Consult overview of FundRequestIssue's:Use Case" id="areadiagram_map_SMpEOPqGAqAArRhg" href="UseCase_ySVaw7qGAqAArRZf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="193, 675, 347, 738" coords2="193, 675, 347, 738" shape="rect" alt="Consult an overview FundRequestIssue's solved by the Solver:Use Case" id="areadiagram_map_VALO6PqGAqAArRdt" href="UseCase_VALO6PqGAqAArRdv.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="537, 1048, 700, 1088" coords2="537, 1048, 700, 1088" shape="rect" alt="Get RepositoryUserAccount information:Use Case" id="areadiagram_map_28wJH3qGAqAArQn0" href="UseCase_28wJH3qGAqAArQn2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="199, 113, 395, 160" coords2="199, 113, 395, 160" shape="rect" alt="Consult FundRequestUserAccount:Use Case" id="areadiagram_map_oX9RH3qGAqAArQh_" href="UseCase_oX9RH3qGAqAArQiA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="481, 104, 635, 168" coords2="481, 104, 635, 168" shape="rect" alt="Link RepositoryUserAccount to FundRequestUser:Use Case" id="areadiagram_map_og.RH3qGAqAArQhX" href="UseCase_Yg_RH3qGAqAArQhZ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="537, 1115, 700, 1155" coords2="537, 1115, 700, 1155" shape="rect" alt="Log in to RepositoryPlatform:Use Case" id="areadiagram_map_7tZpo7qGAqAArRj4" href="UseCase_7tZpo7qGAqAArRj5.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="199, 20, 395, 84" coords2="199, 20, 395, 84" shape="rect" alt="Log in to the FundRequestPlatform:Use Case" id="areadiagram_map_UYapo7qGAqAArRjQ" href="UseCase_UYapo7qGAqAArRjR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="206, 1037, 360, 1100" coords2="206, 1037, 360, 1100" shape="rect" alt="Solve a RepositoryIssue (RepositoryPlatform BPM):Use Case" id="areadiagram_map_m5BGw7qGAqAArRfe" href="UseCase_m5BGw7qGAqAArRfg.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="166, 1027, 738, 1180" coords2="166, 1027, 738, 1180" shape="rect" alt="RepositoryPlatform (GitHub):System" id="areadiagram_map_5GTJo7qGAqAArRhe" href="System_5GTJo7qGAqAArRhf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="477, 674, 627, 738" coords2="477, 674, 627, 738" shape="rect" alt="Claim Reward of funded FundRequestIssue solved by the Solver:Use Case" id="areadiagram_map_A5VJo7qGAqAArRhG" href="UseCase_A5VJo7qGAqAArRhH.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="477, 545, 631, 608" coords2="477, 545, 631, 608" shape="rect" alt="Funding a FundRequestIssue:Use Case" id="areadiagram_map_HZuGw7qGAqAArRfG" href="UseCase_HZuGw7qGAqAArRfI.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="481, 430, 635, 494" coords2="481, 430, 635, 494" shape="rect" alt="Delete an unfunded FundRequestIssue:Use Case" id="areadiagram_map_Auv6w7qGAqAArRdj" href="UseCase_Auv6w7qGAqAArRdl.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="481, 352, 635, 416" coords2="481, 352, 635, 416" shape="rect" alt="Update an unfunded FundRequestIssue:Use Case" id="areadiagram_map_SYn6w7qGAqAArRdL" href="UseCase_SYn6w7qGAqAArRdN.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="481, 269, 635, 333" coords2="481, 269, 635, 333" shape="rect" alt="Create an unfunded FundRequestIssue:Use Case" id="areadiagram_map_kCG6w7qGAqAArRcr" href="UseCase_kCG6w7qGAqAArRct.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="481, 197, 635, 261" coords2="481, 197, 635, 261" shape="rect" alt="Consult FundRequestIssue:Use Case" id="areadiagram_map_qEraw7qGAqAArRaf" href="UseCase_qEraw7qGAqAArRag.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="199, 312, 353, 375" coords2="199, 312, 353, 375" shape="rect" alt="Consult overview of FundRequestIssue's:Use Case" id="areadiagram_map_SSVaw7qGAqAArRZe" href="UseCase_ySVaw7qGAqAArRZf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="166, 2, 738, 839" coords2="166, 2, 738, 839" shape="rect" alt="FundRequestPlatform:System" id="areadiagram_map_7Jlaw7qGAqAArRZX" href="System_nJlaw7qGAqAArRZY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="36, 678, 66, 738" coords2="36, 678, 66, 738" shape="rect" alt="Solver:Actor" id="areadiagram_map_Do5aw7qGAqAArRZN" href="Actor_Do5aw7qGAqAArRZO.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="36, 545, 66, 605" coords2="36, 545, 66, 605" shape="rect" alt="Funder:Actor" id="areadiagram_map_p7Jaw7qGAqAArRZD" href="Actor_Z7Jaw7qGAqAArRZE.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="36, 301, 66, 361" coords2="36, 301, 66, 361" shape="rect" alt="FundRequestUser:Actor" id="areadiagram_map_FWRaw7qGAqAArRY5" href="Actor_VWRaw7qGAqAArRY6.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/System.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/System.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="System_tFFjOPqGAqAArRqs.html" class="ItemLink">SolutionOracle : System</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/System.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/System.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="System_5GTJo7qGAqAArRhf.html" class="ItemLink">RepositoryPlatform (GitHub) : System</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/System.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/System.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="System_nJlaw7qGAqAArRZY.html" class="ItemLink">FundRequestPlatform : System</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Actor_VWRaw7qGAqAArRY6.html" class="ItemLink">FundRequestUser : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Actor_Z7Jaw7qGAqAArRZE.html" class="ItemLink">Funder : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Actor_Do5aw7qGAqAArRZO.html" class="ItemLink">Solver : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Actor_oR9TOPqGAqAArRsR.html" class="ItemLink">FundRequestPlatform : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_ySVaw7qGAqAArRZf.html" class="ItemLink">Consult overview of FundRequestIssue's : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_qEraw7qGAqAArRag.html" class="ItemLink">Consult FundRequestIssue : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_kCG6w7qGAqAArRct.html" class="ItemLink">Create an unfunded FundRequestIssue : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_SYn6w7qGAqAArRdN.html" class="ItemLink">Update an unfunded FundRequestIssue : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_Auv6w7qGAqAArRdl.html" class="ItemLink">Delete an unfunded FundRequestIssue : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_HZuGw7qGAqAArRfI.html" class="ItemLink">Funding a FundRequestIssue : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_m5BGw7qGAqAArRfg.html" class="ItemLink">Solve a RepositoryIssue (RepositoryPlatform BPM) : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_A5VJo7qGAqAArRhH.html" class="ItemLink">Claim Reward of funded FundRequestIssue solved by the Solver : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_UYapo7qGAqAArRjR.html" class="ItemLink">Log in to the FundRequestPlatform : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_7tZpo7qGAqAArRj5.html" class="ItemLink">Log in to RepositoryPlatform : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_Yg_RH3qGAqAArQhZ.html" class="ItemLink">Link RepositoryUserAccount to FundRequestUser : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_oX9RH3qGAqAArQiA.html" class="ItemLink">Consult FundRequestUserAccount : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_28wJH3qGAqAArQn2.html" class="ItemLink">Get RepositoryUserAccount information : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_VALO6PqGAqAArRdv.html" class="ItemLink">Consult an overview FundRequestIssue's solved by the Solver : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_L1zjOPqGAqAArRq3.html" class="ItemLink">Retrieve the RepositoryIssue's solved by the Solver : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="UseCase_2PaTOPqGAqAArRrz.html" class="ItemLink">Evaluate if the Solver has solved a RepositoryIssue.FundRequestIssue : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		FundRequest	</div>
+</body>
+</html>

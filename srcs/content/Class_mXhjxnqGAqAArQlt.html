@@ -52,7 +52,7 @@ FundRequest		</span>
 		</tr>
 	</table>
 	<p>
-<a href="Package_QHBjxnqGAqAArQlp.html" class="PageParentTitle">CrowdsaleToken : Package</a><span class="PageParentTitle">&nbsp;.&nbsp;</span><a href="Model_ozvhTnqGAqAArQ59.html" class="PageParentTitle">lifecycle : Model</a>	</p>
+<a href="Package_QHBjxnqGAqAArQlp.html" class="PageParentTitle">contracts : Package</a><span class="PageParentTitle">&nbsp;.&nbsp;</span><a href="Model_ozvhTnqGAqAArQ59.html" class="PageParentTitle">lifecycle : Model</a>	</p>
 	<p class="PageTitle">
 Class - Haltable<a onclick="javascript: showVpLink('FundRequest.vpp://modelelement/mXhjxnqGAqAArQlt', 'Haltable\nFundRequest.vpp://modelelement/mXhjxnqGAqAArQlt', 'Haltable', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
 	<p>
@@ -101,7 +101,7 @@ Properties			</td>
 <span class="TableContent Documentation"><head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       pragma solidity ^0.4.15;
     </p>
@@ -268,7 +268,7 @@ Properties			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">Sep 12, 2017 11:47:48 PM</span>			</td>
+<span class="TableContent">Oct 7, 2017 10:14:06 PM</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -503,6 +503,78 @@ public			</td>
 			</td>
 			<td>
 				<span class="TableContent">
+<a href="Class_mXhjxnqGAqAArQlt.html#MFMQHnqGAqAArQiP" class="ItemLink">function halt() external onlyOwner</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // called by the owner on emergency, triggers stopped state
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function halt() external onlyOwner {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      halted = true;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_mXhjxnqGAqAArQlt.html#VVMQHnqGAqAArQiS" class="ItemLink">function unhalt() external onlyOwner onlyInEmergency</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // called by the owner on end of emergency, returns to normal state
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function unhalt() external onlyOwner onlyInEmergency {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      halted = false;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
 <a href="Class_mXhjxnqGAqAArQlt.html#B8MQHnqGAqAArQh_" class="ItemLink">modifier stopInEmergency</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
@@ -511,7 +583,7 @@ public			</td>
 <head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       modifier stopInEmergency {
     </p>
@@ -547,7 +619,7 @@ public			</td>
 <head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       modifier stopNonOwnersInEmergency {
     </p>
@@ -589,7 +661,7 @@ public			</td>
 <head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       modifier onlyInEmergency {
     </p>
@@ -598,78 +670,6 @@ public			</td>
     </p>
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       _;
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      }
-    </p>
-  </body>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td class="TableContent">
-public			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td class="TableContent">
-			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-				<span class="TableContent">
-<a href="Class_mXhjxnqGAqAArQlt.html#MFMQHnqGAqAArQiP" class="ItemLink">function halt() external onlyOwner</a>				</span>
-			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td class="TableContent">
-<head>
-    
-  </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      // called by the owner on emergency, triggers stopped state
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      function halt() external onlyOwner {
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      halted = true;
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      }
-    </p>
-  </body>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td class="TableContent">
-public			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td class="TableContent">
-			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-				<span class="TableContent">
-<a href="Class_mXhjxnqGAqAArQlt.html#VVMQHnqGAqAArQiS" class="ItemLink">function unhalt() external onlyOwner onlyInEmergency</a>				</span>
-			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td class="TableContent">
-<head>
-    
-  </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      // called by the owner on end of emergency, returns to normal state
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      function unhalt() external onlyOwner onlyInEmergency {
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      halted = false;
     </p>
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       }
@@ -755,6 +755,32 @@ Relationships Summary			</td>
 			</td>
 		</tr>
 		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Generalization.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Generalization.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_mXhjxnqGAqAArQlt.html#wnQ4l3qGAqAArQzy" class="ItemLink"> : Generalization</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_mXhjxnqGAqAArQlt.html" class="ItemLink">Haltable : Class</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+&nbsp;<a href="Class_RYgol3qGAqAArQtS.html" class="ItemLink">Crowdsale : Class</a>				</span>
+			</td>
+		</tr>
+		<tr class="TableRow1">
 			<td class="TableCellSpaceHolder10Px">
 			</td>
 			<td>
@@ -1053,6 +1079,450 @@ Operations Details			</td>
 			</td>
 		</tr>
 	</table>
+<a name="MFMQHnqGAqAArQiP"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function halt() external onlyOwner</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // called by the owner on emergency, triggers stopped state
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function halt() external onlyOwner {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      halted = true;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 12, 2017 11:39:55 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 12, 2017 11:42:50 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="VVMQHnqGAqAArQiS"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">function unhalt() external onlyOwner onlyInEmergency</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      // called by the owner on end of emergency, returns to normal state
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function unhalt() external onlyOwner onlyInEmergency {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      halted = false;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 12, 2017 11:39:55 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 12, 2017 11:42:50 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
 <a name="B8MQHnqGAqAArQh_"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
@@ -1107,7 +1577,7 @@ Operations Details			</td>
 <span class="TableContent Documentation"><head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       modifier stopInEmergency {
     </p>
@@ -1329,7 +1799,7 @@ Operations Details			</td>
 <span class="TableContent Documentation"><head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       modifier stopNonOwnersInEmergency {
     </p>
@@ -1557,7 +2027,7 @@ Operations Details			</td>
 <span class="TableContent Documentation"><head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       modifier onlyInEmergency {
     </p>
@@ -1601,450 +2071,6 @@ Operations Details			</td>
 			</td>
 			<td>
 <span class="TableContent">Sep 12, 2017 11:42:24 PM</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Backlog Activity Id</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">0</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Static</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Leaf</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visibility</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">public</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visible</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Ordered</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Unique</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visibility</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">public</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Scope</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">instance</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Query</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Abstract</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td class="TableCellSpaceHolder1PxTall">
-			</td>
-		</tr>
-		<tr>
-			<td class="TableFooter">
-			</td>
-		</tr>
-	</table>
-	<p>
-	</p>
-<a name="MFMQHnqGAqAArQiP"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td colSpan="4" class="TableHeaderLine">
-			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine1">
-			</td>
-		</tr>
-		<tr class="TableHeader">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td width="25%">
-<span class="TableHeaderText">Name</span>			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-<span class="TableHeaderText">Value</span>			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine2">
-			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Parameters</span>			</td>
-			<td>
-			</td>
-			<td>
-			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Name</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">function halt() external onlyOwner</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Description</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent Documentation"><head>
-    
-  </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      // called by the owner on emergency, triggers stopped state
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      function halt() external onlyOwner {
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      halted = true;
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      }
-    </p>
-  </body></span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Author</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Work</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Create Date Time</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sep 12, 2017 11:39:55 PM</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Last Modified</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sep 12, 2017 11:42:50 PM</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Backlog Activity Id</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">0</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Static</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Leaf</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visibility</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">public</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visible</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Ordered</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Unique</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visibility</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">public</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Scope</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">instance</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Query</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Abstract</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td class="TableCellSpaceHolder1PxTall">
-			</td>
-		</tr>
-		<tr>
-			<td class="TableFooter">
-			</td>
-		</tr>
-	</table>
-	<p>
-	</p>
-<a name="VVMQHnqGAqAArQiS"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td colSpan="4" class="TableHeaderLine">
-			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine1">
-			</td>
-		</tr>
-		<tr class="TableHeader">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td width="25%">
-<span class="TableHeaderText">Name</span>			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-<span class="TableHeaderText">Value</span>			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine2">
-			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Parameters</span>			</td>
-			<td>
-			</td>
-			<td>
-			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Name</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">function unhalt() external onlyOwner onlyInEmergency</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Description</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent Documentation"><head>
-    
-  </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      // called by the owner on end of emergency, returns to normal state
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      function unhalt() external onlyOwner onlyInEmergency {
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      halted = false;
-    </p>
-    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
-      }
-    </p>
-  </body></span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Author</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Work</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Create Date Time</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sep 12, 2017 11:39:55 PM</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Last Modified</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sep 12, 2017 11:42:50 PM</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -2275,6 +2301,108 @@ Relationships Detail			</td>
 				<span class="TableContent">
 <a href="Stereotype_OZ0gJnqGAqAArQng.html" class="ItemLink">use</a>				</span>
 			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td style="height: 5px;">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="wnQ4l3qGAqAArQzy"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Oct 4, 2017 10:38:11 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Oct 4, 2017 10:38:47 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unspecified</span>			</td>
 		</tr>
 	</table>
 	<table border="0" cellpadding="0" width="100%" cellspacing="0">

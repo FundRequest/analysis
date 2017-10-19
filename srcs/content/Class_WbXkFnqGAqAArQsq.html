@@ -52,7 +52,7 @@ FundRequest		</span>
 		</tr>
 	</table>
 	<p>
-<a href="Package_QHBjxnqGAqAArQlp.html" class="PageParentTitle">CrowdsaleToken : Package</a>	</p>
+<a href="Package_QHBjxnqGAqAArQlp.html" class="PageParentTitle">contracts : Package</a>	</p>
 	<p class="PageTitle">
 Class - Migrations<a onclick="javascript: showVpLink('FundRequest.vpp://modelelement/WbXkFnqGAqAArQsq', 'Migrations\nFundRequest.vpp://modelelement/WbXkFnqGAqAArQsq', 'Migrations', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
 	<p>
@@ -101,7 +101,7 @@ Properties			</td>
 <span class="TableContent Documentation"><head>
     
   </head>
-  <body style="color:#000000;font-weight:normal;margin-right:0;font-size:11px;font-family:Dialog;margin-left:0;">
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
     <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
       pragma solidity ^0.4.15;
     </p>
@@ -207,7 +207,7 @@ Properties			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">Sep 12, 2017 11:38:07 PM</span>			</td>
+<span class="TableContent">Oct 7, 2017 10:14:23 PM</span>			</td>
 		</tr>
 		<tr class="TableRow1">
 			<td>
@@ -466,34 +466,27 @@ public			</td>
 			</td>
 			<td>
 				<span class="TableContent">
-<a href="Class_WbXkFnqGAqAArQsq.html#JAgFTnqGAqAArRBS" class="ItemLink">modifier restricted()</a>				</span>
-			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td class="TableContent">
-			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td class="TableContent">
-public			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td class="TableContent">
-			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-				<span class="TableContent">
 <a href="Class_WbXkFnqGAqAArQsq.html#sAepVnqGAqAArQzu" class="ItemLink">function Migrations()</a>				</span>
 			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
 			<td class="TableContent">
-			</td>
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function Migrations() {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      owner = msg.sender;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td class="TableCellSpaceHolder10Px">
 			</td>
 			<td class="TableContent">
@@ -511,9 +504,22 @@ public			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
 			<td class="TableContent">
-			</td>
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function setCompleted(uint completed) restricted {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      last_completed_migration = completed;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td class="TableCellSpaceHolder10Px">
 			</td>
 			<td class="TableContent">
@@ -531,7 +537,59 @@ public			</td>
 			<td class="TableCellSpaceHolder20Px">
 			</td>
 			<td class="TableContent">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function upgrade(address newAddress) restricted {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      Migrations upgraded = Migrations(newAddress);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      upgraded.setCompleted(last_completed_migration);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td class="TableCellSpaceHolder10Px">
 			</td>
+			<td class="TableContent">
+public			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+				<span class="TableContent">
+<a href="Class_WbXkFnqGAqAArQsq.html#JAgFTnqGAqAArRBS" class="ItemLink">modifier restricted()</a>				</span>
+			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td class="TableContent">
+<head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      modifier restricted() {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require (msg.sender == owner);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      _;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body>			</td>
 		</tr>
 	</table>
 	<table border="0" cellpadding="0" width="100%" cellspacing="0">
@@ -1042,202 +1100,6 @@ Operations Details			</td>
 			</td>
 		</tr>
 	</table>
-<a name="JAgFTnqGAqAArRBS"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td colSpan="4" class="TableHeaderLine">
-			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine1">
-			</td>
-		</tr>
-		<tr class="TableHeader">
-			<td class="TableCellSpaceHolder10Px">
-			</td>
-			<td width="25%">
-<span class="TableHeaderText">Name</span>			</td>
-			<td class="TableCellSpaceHolder20Px">
-			</td>
-			<td>
-<span class="TableHeaderText">Value</span>			</td>
-		</tr>
-		<tr>
-			<td colSpan="4" class="TableHeaderLine2">
-			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Parameters</span>			</td>
-			<td>
-			</td>
-			<td>
-			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Name</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">modifier restricted()</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Author</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Work</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Create Date Time</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sep 11, 2017 10:27:26 PM</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Last Modified</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Sep 11, 2017 10:27:53 PM</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Backlog Activity Id</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">0</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Static</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Leaf</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visibility</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">public</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visible</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Ordered</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Unique</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">true</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Visibility</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">public</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Scope</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">instance</span>			</td>
-		</tr>
-		<tr class="TableRow1">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Query</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-		<tr class="TableRow2">
-			<td>
-			</td>
-			<td>
-<span class="TableContent">Abstract</span>			</td>
-			<td>
-			</td>
-			<td>
-<span class="TableContent">false</span>			</td>
-		</tr>
-	</table>
-	<table border="0" cellpadding="0" width="100%" cellspacing="0">
-		<tr>
-			<td class="TableCellSpaceHolder1PxTall">
-			</td>
-		</tr>
-		<tr>
-			<td class="TableFooter">
-			</td>
-		</tr>
-	</table>
-	<p>
-	</p>
 <a name="sAepVnqGAqAArQzu"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
 		<tr>
 			<td colSpan="4" class="TableHeaderLine">
@@ -1285,13 +1147,36 @@ Operations Details			</td>
 			<td>
 			</td>
 			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function Migrations() {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      owner = msg.sender;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
 <span class="TableContent">Author</span>			</td>
 			<td>
 			</td>
 			<td>
 <span class="TableContent">Work</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1301,7 +1186,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">Sep 10, 2017 8:59:20 AM</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1309,9 +1194,9 @@ Operations Details			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">Sep 10, 2017 9:00:16 AM</span>			</td>
+<span class="TableContent">Oct 4, 2017 10:00:58 PM</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1321,7 +1206,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">0</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1331,7 +1216,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1341,7 +1226,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1351,7 +1236,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">public</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1361,7 +1246,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">true</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1371,7 +1256,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1381,7 +1266,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">true</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1391,7 +1276,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">public</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1401,7 +1286,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">instance</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1411,7 +1296,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1481,13 +1366,36 @@ Operations Details			</td>
 			<td>
 			</td>
 			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function setCompleted(uint completed) restricted {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      last_completed_migration = completed;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
 <span class="TableContent">Author</span>			</td>
 			<td>
 			</td>
 			<td>
 <span class="TableContent">Work</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1497,7 +1405,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">Sep 10, 2017 8:59:21 AM</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1505,9 +1413,9 @@ Operations Details			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">Sep 10, 2017 9:00:16 AM</span>			</td>
+<span class="TableContent">Oct 4, 2017 10:01:09 PM</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1517,7 +1425,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">0</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1527,7 +1435,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1537,7 +1445,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1547,7 +1455,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">public</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1557,7 +1465,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">true</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1567,7 +1475,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1577,7 +1485,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">true</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1587,7 +1495,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">public</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1597,7 +1505,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">instance</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1607,7 +1515,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1677,13 +1585,39 @@ Operations Details			</td>
 			<td>
 			</td>
 			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      function upgrade(address newAddress) restricted {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      Migrations upgraded = Migrations(newAddress);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      upgraded.setCompleted(last_completed_migration);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
 <span class="TableContent">Author</span>			</td>
 			<td>
 			</td>
 			<td>
 <span class="TableContent">Work</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1693,7 +1627,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">Sep 10, 2017 8:59:21 AM</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1701,9 +1635,9 @@ Operations Details			</td>
 			<td>
 			</td>
 			<td>
-<span class="TableContent">Sep 11, 2017 10:28:26 PM</span>			</td>
+<span class="TableContent">Oct 4, 2017 10:01:20 PM</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1713,7 +1647,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">0</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1723,7 +1657,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1733,7 +1667,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1743,7 +1677,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">public</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1753,7 +1687,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">true</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1763,7 +1697,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1773,7 +1707,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">true</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1783,7 +1717,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">public</span>			</td>
 		</tr>
-		<tr class="TableRow2">
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>
@@ -1793,7 +1727,7 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">instance</span>			</td>
 		</tr>
-		<tr class="TableRow1">
+		<tr class="TableRow2">
 			<td>
 			</td>
 			<td>
@@ -1803,7 +1737,229 @@ Operations Details			</td>
 			<td>
 <span class="TableContent">false</span>			</td>
 		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Abstract</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+<a name="JAgFTnqGAqAArRBS"></a>	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="25%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Value</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Parameters</span>			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
 		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Name</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">modifier restricted()</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Description</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;margin-left:0;font-size:11px;font-family:Dialog;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      modifier restricted() {
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      require (msg.sender == owner);
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      _;
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-left:0pt;margin-top:0pt;">
+      }
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Author</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Work</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Create Date Time</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Sep 11, 2017 10:27:26 PM</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Last Modified</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Oct 4, 2017 10:00:47 PM</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Backlog Activity Id</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">0</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Static</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Leaf</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visible</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Ordered</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Unique</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">true</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Visibility</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">public</span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Scope</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">instance</span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">Query</span>			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent">false</span>			</td>
+		</tr>
+		<tr class="TableRow1">
 			<td>
 			</td>
 			<td>

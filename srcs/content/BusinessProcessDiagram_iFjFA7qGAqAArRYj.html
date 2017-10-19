@@ -1,0 +1,666 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Business Process Diagram - BPM Claim Reward of FundRequestIssue</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		FundRequest	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p>
+<a href="Package_pFLOJbqGAqAArQ20.html" class="PageParentTitle">BPM FundRequestPlatform : Package</a>	</p>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Business Process Diagram - BPM Claim Reward of FundRequestIssue		</span>
+<a onclick="javascript: showVpLink('FundRequest.vpp://diagram/iFjFA7qGAqAArRYj', 'BPM Claim Reward of FundRequestIssue\nFundRequest.vpp://diagram/iFjFA7qGAqAArRYj', 'BPM Claim Reward of FundRequestIssue', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),hideLinkPopup(),hideReferencedBys();">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin('diagram', this.value);hideLinkPopup();showSpotLight('diagram', this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|2.0|1.0|2235.0|683.0|BPPool__3HFA7qGAqAArRZx.html|BPPool__3HFA7qGAqAArRZx.html|60AlA7qGAqAArRdg" id="option60AlA7qGAqAArRdg">BPM Claim Reward of FundRequestIssue : Pool</option>
+<option value="shape|17.0|1.0|2216.0|154.0|BPLane_pPHFA7qGAqAArRZ2.html|BPLane_pPHFA7qGAqAArRZ2.html|50AlA7qGAqAArRdj" id="option50AlA7qGAqAArRdj">(Solver)FundRequestUser : Lane</option>
+<option value="shape|107.0|67.0|20.0|20.0|BPStartEvent_hvHFA7qGAqAArRaA.html|BPStartEvent_hvHFA7qGAqAArRaA.html|f0AlA7qGAqAArRdp" id="optionf0AlA7qGAqAArRdp">The (Solver)FundRequestUser wants to claim the reward of a particular funded FundRequestIssue : Start Event</option>
+<option value="shape|180.0|38.0|205.0|88.0|BPTask_7vHFA7qGAqAArRaF.html|BPTask_7vHFA7qGAqAArRaF.html|0MAlA7qGAqAArRds" id="option0MAlA7qGAqAArRds">1: The FundRequestUser chooses to claim the reward/funds from a funded FundRequestIssue, and clicks the "Claim Reward"-button : Task</option>
+<option value="shape|180.0|188.0|205.0|88.0|BPTask_cfHFA7qGAqAArRaK.html|BPTask_cfHFA7qGAqAArRaK.html|yMAlA7qGAqAArRdv" id="optionyMAlA7qGAqAArRdv">2: The FundRequestPlatform checks with the RepositoryPlatform if the FundRequestIssue.RepositoryIssue is solved by the current (Solver)FundRequestUser : Task</option>
+<option value="shape|413.0|188.0|207.0|88.0|BPTask_G_HFA7qGAqAArRae.html|BPTask_G_HFA7qGAqAArRae.html|QsAlA7qGAqAArRd7" id="optionQsAlA7qGAqAArRd7">3: The FundRequestPlatform asks for the (Solver) FundRequestUser.ethereumAddress : Task</option>
+<option value="shape|1550.0|67.0|20.0|20.0|BPIntermediateEvent_8mkc6PqGAqAArRBw.html|BPIntermediateEvent_8mkc6PqGAqAArRBw.html|cmkc6PqGAqAArRBv" id="optioncmkc6PqGAqAArRBv">FundRequestUser is informed about updated intermediate state = "Rewarding transaction pending" : Intermediate Event</option>
+<option value="shape|2048.0|67.0|20.0|20.0|BPEndEvent_86Mi6PqGAqAArRE4.html|BPEndEvent_86Mi6PqGAqAArRE4.html|86Mi6PqGAqAArRE3" id="option86Mi6PqGAqAArRE3">FundRequestUser is informed about updated final state = "Rewarding transaction successful" : End Event</option>
+<option value="shape|17.0|155.0|2216.0|150.0|BPLane_UvHFA7qGAqAArRZ7.html|BPLane_UvHFA7qGAqAArRZ7.html|T0AlA7qGAqAArRdm" id="optionT0AlA7qGAqAArRdm">FundRequestPlatform : Lane</option>
+<option value="shape|647.0|188.0|194.0|88.0|BPTask_U_HFA7qGAqAArRaZ.html|BPTask_U_HFA7qGAqAArRaZ.html|HMAlA7qGAqAArRd4" id="optionHMAlA7qGAqAArRd4">4: The FundRequestPlatform prepares the rewarding-transaction to send to the FundRequestUser's Wallet : Task</option>
+<option value="shape|1465.0|186.0|194.0|88.0|BPTask_6q_s6PqGAqAArRBi.html|BPTask_6q_s6PqGAqAArRBi.html|6q_s6PqGAqAArRBg" id="option6q_s6PqGAqAArRBg">9. The FundRequestPlatform informs the FundRequestUser about the updated state : Task</option>
+<option value="shape|1962.0|186.0|194.0|88.0|BPTask_8RG86PqGAqAArRES.html|BPTask_8RG86PqGAqAArRES.html|cRG86PqGAqAArREQ" id="optioncRG86PqGAqAArREQ">13. The FundRequestPlatform informs the FundRequestUser about the updated state : Task</option>
+<option value="shape|17.0|498.0|2216.0|185.0|BPLane_nfHFA7qGAqAArRaU.html|BPLane_nfHFA7qGAqAArRaU.html|FMAlA7qGAqAArRd1" id="optionFMAlA7qGAqAArRd1">Ethereum.SmartContract : Lane</option>
+<option value="shape|1466.0|548.0|194.0|88.0|BPTask_1Exc6PqGAqAArRCb.html|BPTask_1Exc6PqGAqAArRCb.html|1Exc6PqGAqAArRCZ" id="option1Exc6PqGAqAArRCZ">10. The rewarding-transaction is mined on the Ethereum Blockchain : Task</option>
+<option value="shape|1719.0|548.0|194.0|88.0|BPTask_r1tc6PqGAqAArRCw.html|BPTask_r1tc6PqGAqAArRCw.html|r1tc6PqGAqAArRCu" id="optionr1tc6PqGAqAArRCu">11. The rewarding-transaction is registered as an FundRequestContractEntry in the FundRequestContract : Task</option>
+<option value="shape|1962.0|548.0|194.0|88.0|BPTask_jQY86PqGAqAArRDc.html|BPTask_jQY86PqGAqAArRDc.html|jQY86PqGAqAArRDa" id="optionjQY86PqGAqAArRDa">12. The FundRequestContract sends a notification to the FundRequestPlatform : Task</option>
+<option value="shape|17.0|305.0|2216.0|192.0|BPLane_Z_HFA7qGAqAArRaj.html|BPLane_Z_HFA7qGAqAArRaj.html|MsAlA7qGAqAArRd." id="optionMsAlA7qGAqAArRd.">Wallet of the FundRequestUser : Lane</option>
+<option value="shape|1364.0|364.0|40.0|40.0|BPGateway_rgvIw7qGAqAArQ_K.html|BPGateway_rgvIw7qGAqAArQ_K.html|rgvIw7qGAqAArQ.J" id="optionrgvIw7qGAqAArQ.J">Async : Gateway</option>
+<option value="shape|648.0|341.0|194.0|88.0|BPTask_tCs06PqGAqAArQ_F.html|BPTask_tCs06PqGAqAArQ_F.html|tCs06PqGAqAArQ_D" id="optiontCs06PqGAqAArQ_D">5. The FundRequestPlatform calls the FundRequestUser's Wallet to open it for the rewarding-transaction : Task</option>
+<option value="shape|884.0|341.0|194.0|88.0|BPTask_fhp06PqGAqAArQ_b.html|BPTask_fhp06PqGAqAArQ_b.html|fhp06PqGAqAArQ_Z" id="optionfhp06PqGAqAArQ_Z">6. The FundRequestUser confirms the rewarding-transaction to the FundRequestUser's Wallet : Task</option>
+<option value="shape|1119.0|341.0|194.0|88.0|BPTask_I0b06PqGAqAArRAC.html|BPTask_I0b06PqGAqAArRAC.html|I0b06PqGAqAArRAA" id="optionI0b06PqGAqAArRAA">7. The FundRequestUser's Wallet submits the rewarding-transaction to the FundRequestContract : Task</option>
+<option value="shape|1464.0|342.0|194.0|88.0|BPTask_Y5ds6PqGAqAArRBP.html|BPTask_Y5ds6PqGAqAArRBP.html|Y5ds6PqGAqAArRBN" id="optionY5ds6PqGAqAArRBN">8. The FundRequestUser's Wallet informs the FundRequestPlatform that the rewarding-transaction is submitted to the FundRequestContract : Task</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/BPM_Claim_Reward_of_FundRequestIssue.png" usemap="#diagram_map" class="Image" width="2241" height="688"/>
+					<map name="diagram_map">
+<area imageId="diagram" coords="127.0, 69.0, 127.0, 83.0, 180.0, 83.0, 180.0, 69.0" coords2="127.0, 69.0, 127.0, 83.0, 180.0, 83.0, 180.0, 69.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_n8AlA7qGAqAArRfV" href="BPSequenceFlow_GwnFA7qGAqAArRbw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="385.0, 225.0, 385.0, 239.0, 413.0, 239.0, 413.0, 225.0" coords2="385.0, 225.0, 385.0, 239.0, 413.0, 239.0, 413.0, 225.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_gCAlA7qGAqAArRfb" href="BPSequenceFlow_ZwnFA7qGAqAArRb6.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="270.0, 126.0, 270.0, 188.0, 284.0, 188.0, 284.0, 126.0" coords2="270.0, 126.0, 270.0, 188.0, 284.0, 188.0, 284.0, 126.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_f8AlA7qGAqAArRfY" href="BPSequenceFlow_hwnFA7qGAqAArRb1.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="620.0, 223.0, 620.0, 237.0, 647.0, 237.0, 647.0, 223.0" coords2="620.0, 223.0, 620.0, 237.0, 647.0, 237.0, 647.0, 223.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_V8AlA7qGAqAArRfJ" href="BPSequenceFlow_VwnFA7qGAqAArRb_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1553.0, 87.0, 1553.0, 186.0, 1567.0, 186.0, 1567.0, 87.0" coords2="1553.0, 87.0, 1553.0, 186.0, 1567.0, 186.0, 1567.0, 87.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_XeOc6PqGAqAArRB4" href="BPSequenceFlow_LeOc6PqGAqAArRB3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2050.0, 87.0, 2050.0, 186.0, 2064.0, 186.0, 2064.0, 87.0" coords2="2050.0, 87.0, 2050.0, 186.0, 2064.0, 186.0, 2064.0, 87.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_8cTS6PqGAqAArRPJ" href="BPSequenceFlow_EcTS6PqGAqAArRPI.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1660.0, 580.0, 1660.0, 594.0, 1719.0, 594.0, 1719.0, 580.0" coords2="1660.0, 580.0, 1660.0, 594.0, 1719.0, 594.0, 1719.0, 580.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_ydQ86PqGAqAArRDL" href="BPSequenceFlow_sdQ86PqGAqAArRDK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2048.0, 274.0, 2048.0, 548.0, 2062.0, 548.0, 2062.0, 274.0" coords2="2048.0, 274.0, 2048.0, 548.0, 2062.0, 548.0, 2062.0, 274.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_oAki6PqGAqAArREs" href="BPSequenceFlow_v_Ei6PqGAqAArREr.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1913.0, 580.0, 1913.0, 594.0, 1962.0, 594.0, 1962.0, 580.0" coords2="1913.0, 580.0, 1913.0, 594.0, 1962.0, 594.0, 1962.0, 580.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_rg686PqGAqAArRD9" href="BPSequenceFlow_Ng686PqGAqAArRD8.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="736.0, 276.0, 736.0, 341.0, 750.0, 341.0, 750.0, 276.0" coords2="736.0, 276.0, 736.0, 341.0, 750.0, 341.0, 750.0, 276.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_mpJ06PqGAqAArQ_S" href="BPSequenceFlow_qpJ06PqGAqAArQ_R.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="842.0, 374.0, 842.0, 388.0, 884.0, 388.0, 884.0, 374.0" coords2="842.0, 374.0, 842.0, 388.0, 884.0, 388.0, 884.0, 374.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_JaF06PqGAqAArQ_h" href="BPSequenceFlow__aF06PqGAqAArQ_g.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1078.0, 374.0, 1078.0, 388.0, 1119.0, 388.0, 1119.0, 374.0" coords2="1078.0, 374.0, 1078.0, 388.0, 1119.0, 388.0, 1119.0, 374.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_z_706PqGAqAArRAI" href="BPSequenceFlow_9_706PqGAqAArRAH.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1376.0, 404.0, 1376.0, 583.0, 1373.0, 583.0, 1373.0, 597.0, 1376.0, 597.0, 1376.0, 600.0, 1390.0, 600.0, 1390.0, 597.0, 1466.0, 597.0, 1466.0, 583.0, 1390.0, 583.0, 1390.0, 404.0" coords2="1376.0, 404.0, 1376.0, 583.0, 1373.0, 583.0, 1373.0, 597.0, 1376.0, 597.0, 1376.0, 600.0, 1390.0, 600.0, 1390.0, 597.0, 1466.0, 597.0, 1466.0, 583.0, 1390.0, 583.0, 1390.0, 404.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_P6g86PqGAqAArRDH" href="BPSequenceFlow_r6g86PqGAqAArRDG.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1313.0, 375.0, 1313.0, 389.0, 1364.0, 389.0, 1364.0, 375.0" coords2="1313.0, 375.0, 1313.0, 389.0, 1364.0, 389.0, 1364.0, 375.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_wlFs6PqGAqAArRA." href="BPSequenceFlow_vFFs6PqGAqAArRA9.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1548.0, 274.0, 1548.0, 342.0, 1562.0, 342.0, 1562.0, 274.0" coords2="1548.0, 274.0, 1548.0, 342.0, 1562.0, 342.0, 1562.0, 274.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_p9Ac6PqGAqAArRBo" href="BPSequenceFlow_e9Ac6PqGAqAArRBn.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1404.0, 371.0, 1404.0, 385.0, 1464.0, 385.0, 1464.0, 371.0" coords2="1404.0, 371.0, 1404.0, 385.0, 1464.0, 385.0, 1464.0, 371.0" shape="poly" alt=":Sequence Flow" id="areadiagram_map_yfjs6PqGAqAArRBV" href="BPSequenceFlow_0fjs6PqGAqAArRBU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2048, 67, 2068, 87" coords2="2048, 67, 2068, 87" shape="rect" alt="FundRequestUser is informed about updated final state = "Rewarding transaction successful":End Event" id="areadiagram_map_86Mi6PqGAqAArRE3" href="BPEndEvent_86Mi6PqGAqAArRE4.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1962, 186, 2156, 274" coords2="1962, 186, 2156, 274" shape="rect" alt="13. The FundRequestPlatform informs the FundRequestUser about the updated state:Task" id="areadiagram_map_cRG86PqGAqAArREQ" href="BPTask_8RG86PqGAqAArRES.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1962, 548, 2156, 636" coords2="1962, 548, 2156, 636" shape="rect" alt="12. The FundRequestContract sends a notification to the FundRequestPlatform:Task" id="areadiagram_map_jQY86PqGAqAArRDa" href="BPTask_jQY86PqGAqAArRDc.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1719, 548, 1913, 636" coords2="1719, 548, 1913, 636" shape="rect" alt="11. The rewarding-transaction is registered as an FundRequestContractEntry in the FundRequestContract:Task" id="areadiagram_map_r1tc6PqGAqAArRCu" href="BPTask_r1tc6PqGAqAArRCw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1466, 548, 1660, 636" coords2="1466, 548, 1660, 636" shape="rect" alt="10. The rewarding-transaction is mined on the Ethereum Blockchain:Task" id="areadiagram_map_1Exc6PqGAqAArRCZ" href="BPTask_1Exc6PqGAqAArRCb.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1550, 67, 1570, 87" coords2="1550, 67, 1570, 87" shape="rect" alt="FundRequestUser is informed about updated intermediate state = "Rewarding transaction pending":Intermediate Event" id="areadiagram_map_cmkc6PqGAqAArRBv" href="BPIntermediateEvent_8mkc6PqGAqAArRBw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1465, 186, 1659, 274" coords2="1465, 186, 1659, 274" shape="rect" alt="9. The FundRequestPlatform informs the FundRequestUser about the updated state:Task" id="areadiagram_map_6q_s6PqGAqAArRBg" href="BPTask_6q_s6PqGAqAArRBi.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1464, 342, 1658, 430" coords2="1464, 342, 1658, 430" shape="rect" alt="8. The FundRequestUser's Wallet informs the FundRequestPlatform that the rewarding-transaction is submitted to the FundRequestContract:Task" id="areadiagram_map_Y5ds6PqGAqAArRBN" href="BPTask_Y5ds6PqGAqAArRBP.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1119, 341, 1313, 429" coords2="1119, 341, 1313, 429" shape="rect" alt="7. The FundRequestUser's Wallet submits the rewarding-transaction to the FundRequestContract:Task" id="areadiagram_map_I0b06PqGAqAArRAA" href="BPTask_I0b06PqGAqAArRAC.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="884, 341, 1078, 429" coords2="884, 341, 1078, 429" shape="rect" alt="6. The FundRequestUser confirms the rewarding-transaction to the FundRequestUser's Wallet:Task" id="areadiagram_map_fhp06PqGAqAArQ_Z" href="BPTask_fhp06PqGAqAArQ_b.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="648, 341, 842, 429" coords2="648, 341, 842, 429" shape="rect" alt="5. The FundRequestPlatform calls the FundRequestUser's Wallet to open it for the rewarding-transaction:Task" id="areadiagram_map_tCs06PqGAqAArQ_D" href="BPTask_tCs06PqGAqAArQ_F.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1364, 364, 1404, 404" coords2="1364, 364, 1404, 404" shape="rect" alt="Async:Gateway" id="areadiagram_map_rgvIw7qGAqAArQ.J" href="BPGateway_rgvIw7qGAqAArQ_K.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="17, 305, 2233, 497" coords2="17, 305, 2233, 497" shape="rect" alt="Wallet of the FundRequestUser:Lane" id="areadiagram_map_MsAlA7qGAqAArRd." href="BPLane_Z_HFA7qGAqAArRaj.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="413, 188, 620, 276" coords2="413, 188, 620, 276" shape="rect" alt="3: The FundRequestPlatform asks for the (Solver) FundRequestUser.ethereumAddress:Task" id="areadiagram_map_QsAlA7qGAqAArRd7" href="BPTask_G_HFA7qGAqAArRae.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="647, 188, 841, 276" coords2="647, 188, 841, 276" shape="rect" alt="4: The FundRequestPlatform prepares the rewarding-transaction to send to the FundRequestUser's Wallet:Task" id="areadiagram_map_HMAlA7qGAqAArRd4" href="BPTask_U_HFA7qGAqAArRaZ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="17, 498, 2233, 683" coords2="17, 498, 2233, 683" shape="rect" alt="Ethereum.SmartContract:Lane" id="areadiagram_map_FMAlA7qGAqAArRd1" href="BPLane_nfHFA7qGAqAArRaU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="180, 188, 385, 276" coords2="180, 188, 385, 276" shape="rect" alt="2: The FundRequestPlatform checks with the RepositoryPlatform if the FundRequestIssue.RepositoryIssue is solved by the current (Solver)FundRequestUser:Task" id="areadiagram_map_yMAlA7qGAqAArRdv" href="BPTask_cfHFA7qGAqAArRaK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="180, 38, 385, 126" coords2="180, 38, 385, 126" shape="rect" alt="1: The FundRequestUser chooses to claim the reward/funds from a funded FundRequestIssue, and clicks the "Claim Reward"-button:Task" id="areadiagram_map_0MAlA7qGAqAArRds" href="BPTask_7vHFA7qGAqAArRaF.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="107, 67, 127, 87" coords2="107, 67, 127, 87" shape="rect" alt="The (Solver)FundRequestUser wants to claim the reward of a particular funded FundRequestIssue:Start Event" id="areadiagram_map_f0AlA7qGAqAArRdp" href="BPStartEvent_hvHFA7qGAqAArRaA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="17, 155, 2233, 305" coords2="17, 155, 2233, 305" shape="rect" alt="FundRequestPlatform:Lane" id="areadiagram_map_T0AlA7qGAqAArRdm" href="BPLane_UvHFA7qGAqAArRZ7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="17, 1, 2233, 155" coords2="17, 1, 2233, 155" shape="rect" alt="(Solver)FundRequestUser:Lane" id="areadiagram_map_50AlA7qGAqAArRdj" href="BPLane_pPHFA7qGAqAArRZ2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2, 1, 2237, 684" coords2="2, 1, 2237, 684" shape="rect" alt="BPM Claim Reward of FundRequestIssue:Pool" id="areadiagram_map_60AlA7qGAqAArRdg" href="BPPool__3HFA7qGAqAArRZx.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="6" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="6" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="10%">
+<span class="TableHeaderText">ID</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="6" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/SwimlanePool.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/SwimlanePool.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPPool__3HFA7qGAqAArRZx.html" class="ItemLink">BPM Claim Reward of FundRequestIssue : Pool</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP01</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/SwimlaneLane.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/SwimlaneLane.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPLane_pPHFA7qGAqAArRZ2.html" class="ItemLink">(Solver)FundRequestUser : Lane</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP01.BP01</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EventsStart.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EventsStart.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPStartEvent_hvHFA7qGAqAArRaA.html" class="ItemLink">The (Solver)FundRequestUser wants to claim the reward of a particular funded FundRequestIssue : Start Event</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP01.BP03</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_7vHFA7qGAqAArRaF.html" class="ItemLink">1: The FundRequestUser chooses to claim the reward/funds from a funded FundRequestIssue, and clicks the "Claim Reward"-button : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP01.BP05</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_cfHFA7qGAqAArRaK.html" class="ItemLink">2: The FundRequestPlatform checks with the RepositoryPlatform if the FundRequestIssue.RepositoryIssue is solved by the current (Solver)FundRequestUser : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP01.BP26</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_G_HFA7qGAqAArRae.html" class="ItemLink">3: The FundRequestPlatform asks for the (Solver) FundRequestUser.ethereumAddress : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP01.BP43</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EventsIntermediate.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EventsIntermediate.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPIntermediateEvent_8mkc6PqGAqAArRBw.html" class="ItemLink">FundRequestUser is informed about updated intermediate state = "Rewarding transaction pending" : Intermediate Event</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP01.BP44</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EventsEnd.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EventsEnd.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPEndEvent_86Mi6PqGAqAArRE4.html" class="ItemLink">FundRequestUser is informed about updated final state = "Rewarding transaction successful" : End Event</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP02</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/SwimlaneLane.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/SwimlaneLane.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPLane_UvHFA7qGAqAArRZ7.html" class="ItemLink">FundRequestPlatform : Lane</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP02.BP28</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_U_HFA7qGAqAArRaZ.html" class="ItemLink">4: The FundRequestPlatform prepares the rewarding-transaction to send to the FundRequestUser's Wallet : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP02.BP61</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_6q_s6PqGAqAArRBi.html" class="ItemLink">9. The FundRequestPlatform informs the FundRequestUser about the updated state : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP02.BP68</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_8RG86PqGAqAArRES.html" class="ItemLink">13. The FundRequestPlatform informs the FundRequestUser about the updated state : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP03</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/SwimlaneLane.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/SwimlaneLane.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPLane_nfHFA7qGAqAArRaU.html" class="ItemLink">Ethereum.SmartContract : Lane</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP03.BP63</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_1Exc6PqGAqAArRCb.html" class="ItemLink">10. The rewarding-transaction is mined on the Ethereum Blockchain : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP03.BP64</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_r1tc6PqGAqAArRCw.html" class="ItemLink">11. The rewarding-transaction is registered as an FundRequestContractEntry in the FundRequestContract : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP03.BP66</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_jQY86PqGAqAArRDc.html" class="ItemLink">12. The FundRequestContract sends a notification to the FundRequestPlatform : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP20</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/SwimlaneLane.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/SwimlaneLane.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPLane_Z_HFA7qGAqAArRaj.html" class="ItemLink">Wallet of the FundRequestUser : Lane</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP20.BP47</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/GatewayExDescMergeDataBased.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/GatewayExDescMergeDataBased.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPGateway_rgvIw7qGAqAArQ_K.html" class="ItemLink">Async : Parallel Fork/Join (AND)</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP20.BP53</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_tCs06PqGAqAArQ_F.html" class="ItemLink">5. The FundRequestPlatform calls the FundRequestUser's Wallet to open it for the rewarding-transaction : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP20.BP54</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_fhp06PqGAqAArQ_b.html" class="ItemLink">6. The FundRequestUser confirms the rewarding-transaction to the FundRequestUser's Wallet : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP20.BP56</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_I0b06PqGAqAArRAC.html" class="ItemLink">7. The FundRequestUser's Wallet submits the rewarding-transaction to the FundRequestContract : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+<span class="TableContent">BP34.BP20.BP59</span>			</td>
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivitiesTask.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivitiesTask.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="BPTask_Y5ds6PqGAqAArRBP.html" class="ItemLink">8. The FundRequestUser's Wallet informs the FundRequestPlatform that the rewarding-transaction is submitted to the FundRequestContract : Task</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		FundRequest	</div>
+</body>
+</html>
